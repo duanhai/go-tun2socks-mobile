@@ -24,9 +24,9 @@ addons:
     - default-jdk
 
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then source .travis/download-sdk-tools-linux; fi
+  #- if [ "$TRAVIS_OS_NAME" = "linux" ]; then source .travis/download-sdk-tools-linux; fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then source .travis/download-sdk-tools-darwin; fi
-  - source .travis/install-sdk-ndk
+  #- source .travis/install-sdk-ndk
 
 install:
   - echo "Getting deps"
@@ -39,6 +39,6 @@ install:
 script:
   - echo "Building"
   # Make android on linux.
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then make android; ls -l build; fi
+  #- if [ "$TRAVIS_OS_NAME" = "linux" ]; then make android; ls -l build; fi
   # Make both android and ios on osx.
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then make; ls -l build; fi
